@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Flex Practice</title>
+    <style>
+        /*Feel Free to add classes and styling as you see fit.*/
+        * {
+            margin: 0px;
+            padding: 0px;
+        }
+        header, footer{
+            width: 100%;
+            height: 100px;
+            background-color: black;
+            color: white;
+            line-height: 100px;
+        }
+        .container{
+            display: flex;
+            /* flex-wrap: wrap; */
+            /* justify-content: space-between; */
+        }
+        .blueBox{
+            flex-basis: calc(100% / 3 - 14px);
+            background-color: blue;
+        }
+        .redBox{
+            width: calc(100% - 14px);
+            background-color: red;
+            flex-flow: column wrap;
+        }
+        .blueBox, .redBox{
+            min-height: 150px;
+            margin: 5px;
+            border: 2px solid black;
+        }
+        .left {
+            float: left;
+            width: calc(100% / 3 * 2);
+            height: calc(100% / 3);
+            display: flex;
+            flex-flow: row wrap;
+        }
+        .right {
+            width: calc(100% / 3);
+            display: flex;
+            flex-direction: column;
+        }
+        .both {
+            width: 100%;
+            display: flex;
+            flex-flow: row wrap;
+            justify-content: space-between;
+        }
+        .center, main, aside{
+            text-align: center;
+            color: white;
+        }
+        main, aside{
+            float: left;
+            font-size: 50px;
+        }
+        .order0{
+            order: -1;
+        }
+        .order1{
+            order: 0;
+        }
+        .order2{
+            order: 1;
+        }
+        .order3{
+            order: 3;
+        }
+        
+ </style>
+</head>
+<body>
+    <header>
+        <h1 class="center">HEWWO WUHLD</h1>
+    </header>
+    <div class="container both">
+        <main class="container left">
+            <div class="blueBox order0">1</div>
+            <div class="blueBox order1">2</div>
+            <div class="blueBox order3">3</div>
+            <div class="blueBox order2">4</div>
+            <div class="blueBox order1">5</div>
+            <div class="blueBox order0">6</div>
+        </main>
+        <aside class="container right">
+            <div class="redBox order2">1</div>
+            <div class="redBox">2</div>
+            <div class="redBox">3</div>
+        </aside>
+    </div>
+    <footer>
+        <h1 class="center">UWU</h1>
+    </footer>
+</body>
+</html>
